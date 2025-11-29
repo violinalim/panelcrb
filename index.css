@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 270 100% 2%;
+    --foreground: 270 20% 98%;
+
+    --card: 270 50% 6%;
+    --card-foreground: 270 20% 98%;
+
+    --popover: 270 50% 6%;
+    --popover-foreground: 270 20% 98%;
+
+    --primary: 280 80% 70%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 270 20% 98%;
+
+    --muted: 270 30% 12%;
+    --muted-foreground: 270 20% 70%;
+
+    --accent: 320 100% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 30% 18%;
+    --input: 270 50% 10%;
+    --ring: 280 80% 70%;
+
+    --radius: 1rem;
+    
+    /* Custom tokens */
+    --neon-purple: 280 80% 70%;
+    --neon-pink: 320 100% 70%;
+    --cosmic-dark: 270 100% 2%;
+    --cosmic-panel: 270 50% 6%;
+    
+    --gradient-neon: linear-gradient(90deg, hsl(280 80% 70%), hsl(320 100% 70%));
+    --gradient-cosmic: radial-gradient(circle at top, hsl(270 60% 20%), hsl(270 100% 2%));
+    
+    --shadow-neon: 0 0 30px hsl(280 80% 70% / 0.5);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.6);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Using same theme for consistency */
+    --background: 270 100% 2%;
+    --foreground: 270 20% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cosmic-dark text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  .bg-cosmic-dark {
+    background: hsl(var(--cosmic-dark));
+  }
+  
+  .bg-cosmic-panel {
+    background: hsl(var(--cosmic-panel));
+  }
+  
+  .text-neon-purple {
+    color: hsl(var(--neon-purple));
+  }
+  
+  .text-neon-pink {
+    color: hsl(var(--neon-pink));
+  }
+  
+  .gradient-neon {
+    background: var(--gradient-neon);
+  }
+  
+  .shadow-neon {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
